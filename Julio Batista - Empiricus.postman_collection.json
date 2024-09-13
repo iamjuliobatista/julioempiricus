@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "d3d115b0-d06a-4aa5-bd63-d74024a81264",
+		"name": "Julio Batista - Empiricus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Criar um novo usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Jose\",\r\n    \"cpf\": \"12345678912\",\r\n    \"senha\": \"senha123456\",\r\n    \"data_criacao\": \"2010-01-01\",\r\n    \"data_atualizacao\": \"2010-01-01\",\r\n    \"admin1\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/usuarios/entrar?cpf=12345678912&senha=senha123456",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"entrar"
+					],
+					"query": [
+						{
+							"key": "cpf",
+							"value": "12345678912"
+						},
+						{
+							"key": "senha",
+							"value": "senha123456"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vizualizar um usuario especifico",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "header",
+						"value": "",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/usuarios/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar todos os usuarios",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "header",
+						"value": "",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar um usuario existente",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "header",
+						"value": "",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"nome\": \"Julio12\",\r\n    \"cpf\": \"12345678913\",\r\n    \"senha\": \"senha123456\",\r\n    \"data_criacao\": \"2024-09-13\",\r\n    \"data_atualizacao\": \"2024-09-13\",\r\n    \"admin1\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar um usuario",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "header",
+						"value": "",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/usuarios/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar um novo email",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "header",
+						"value": "",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"teste@gmail.com\",\r\n    \"usuarios\": {\r\n        \"id\": 1,\r\n        \"cpf\": \"12345678912\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/emails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"emails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar todos os emails",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "header",
+						"value": "",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/emails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"emails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vizualizar emails de um usuario",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "header",
+						"value": "",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/emails/findbyuserid?user_id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"emails",
+						"findbyuserid"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar um email",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "header",
+						"value": "",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/emails/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"emails",
+						"1"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
